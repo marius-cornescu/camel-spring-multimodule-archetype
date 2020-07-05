@@ -19,6 +19,7 @@
     </scm>
 
     <properties>
+        <camel.version>3.0.0</camel.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
@@ -26,7 +27,7 @@
     <modules>
         <module>common</module>
         <module>${rootArtifactId}-${firstModule}</module>
-        <module>${rootArtifactId}-dmz</module>
+        <module>${rootArtifactId}-${secondModule}</module>
     </modules>
 
     <dependencyManagement>
@@ -39,9 +40,20 @@
 
             <dependency>
                 <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>${camel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
                 <artifactId>camel-ftp</artifactId>
                 <version>${camel.version}</version>
-                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-starter</artifactId>
+                <version>${camel.version}</version>
             </dependency>
 
         </dependencies>
